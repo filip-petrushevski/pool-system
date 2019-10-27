@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Staatliches', cursive;
+}
+
+.title {
+  text-align: center;
+  font-size: 40px;
+  color: #EA4335;
+}
