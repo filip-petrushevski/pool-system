@@ -1,15 +1,17 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
 
 namespace PoolSystem.Models
 {
-    public class Visit
+    public partial class Visit
     {
-        [Key]
         public int Id { get; set; }
-        public DateTime LeaveDateTime { get; set; }
         public DateTime ArrivalDateTime { get; set; }
+        public DateTime LeaveDateTime { get; set; }
         public int CardId { get; set; }
         public int LockerId { get; set; }
+
+        public virtual Card Card { get; set; }
+        public virtual Locker Locker { get; set; }
     }
 }

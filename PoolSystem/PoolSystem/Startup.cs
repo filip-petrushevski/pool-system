@@ -1,10 +1,11 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using PoolSystem.DbContexts;
 
 namespace PoolSystem
 {
@@ -26,6 +27,10 @@ namespace PoolSystem
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "ClientApp/dist";
+            });
+            services.AddDbContext<PoolSystemContext>(options =>
+            {
+                options.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=PoolSystem;Trusted_Connection=True;");
             });
         }
 
@@ -66,6 +71,7 @@ namespace PoolSystem
                     spa.UseAngularCliServer(npmScript: "start");
                 }
             });
+
         }
     }
 }

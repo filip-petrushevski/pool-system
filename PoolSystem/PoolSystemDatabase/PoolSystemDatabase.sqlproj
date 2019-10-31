@@ -68,4 +68,7 @@
     <Build Include="Tables\Visit.sql" />
     <Build Include="Tables\Locker.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="PoolSystemDatabase.publish.xml" />
+  </ItemGroup>
 </Project>
