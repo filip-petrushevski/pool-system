@@ -1,0 +1,37 @@
+footer {
+  height: 350px;
+  width: 100%;
+  background-color: #7b51c9;
+  color: white;
+  margin-top: 30px;
+  text-align: center;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+  margin-left: 10px;
+  margin-top: 30px;
+}
+
+.logos {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+img:hover {
+  opacity: 0.7;
+}
+
+.angular {
+  background: url('../../../assets/angular-logo.png') no-repeat center;
+  background-size: contain;
+  height: 85px;
+  width: 85px;
+  margin: 0 auto;
+}
+
+.angular:hover {
+  opacity: 0.7;
+}

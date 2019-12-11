@@ -1,0 +1,23 @@
+.main {
+  background: url('../../../assets/kid-in-pool.jpg') no-repeat center;
+  background-size: cover;
+  height: 320px;
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+
+.stats {
+  padding-top: 140px;
+  display: flex;
+}
+
+.col-text {
+  font-size: 16pt;
+}
+
+.num {
+  font-size: 25pt;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 7px 7px 10px 0 rgba(4, 4, 4, 0.06);
+}
