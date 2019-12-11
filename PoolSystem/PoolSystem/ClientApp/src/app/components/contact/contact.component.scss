@@ -1,0 +1,52 @@
+.label {
+  color: rgba(41,51,71,.65);
+}
+
+.input, .textarea {
+  width: 90%;
+}
+
+.button {
+  background-color: #fff;
+  color: #007bff!important;
+  border: 2px solid #007bff!important;
+  border-radius: 20px;
+  text-align: center;
+  -webkit-transition: .4s;
+  transition: all .4s ease 0s;
+  font-weight: 400;
+  font-size: 18px;
+  height: 40px;
+  width: 200px;
+  margin-top: 2em;
+  margin-left: 30px;
+}
+
+.button:hover {
+  color: #fff!important;
+  background-color: #007bff!important;
+  border-color: #007bff!important;
+  -webkit-transition: .4s;
+  transition: all .4s ease 0s;
+}
+
+h2 {
+  margin-left: 40px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.contact-image {
+  background: url('../../../assets/contact-image.jpg') no-repeat center;
+  background-size: contain;
+  width: 66%;
+  height: 500px;
+}
+
+.contact {
+  display: flex;
+}
+
+.controls {
+  padding-left: 90px;
+}
