@@ -70,5 +70,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="PoolSystemDatabase.publish.xml" />
+    <None Include="PoolSystemDatabase_1.publish.xml" />
   </ItemGroup>
 </Project>
