@@ -22,5 +22,27 @@ namespace PoolSystem.Controllers
         {
             return dbContext.CardInfo.ToList();
         }
+
+        [HttpPost()]
+        public CardInfo addCardInfo(CardInfo cardInfo)
+        {
+            dbContext.CardInfo.Add(cardInfo);
+            dbContext.SaveChanges();
+            return cardInfo;
+        }
+
+        [HttpDelete("{id}")]
+        public ActionResult<CardInfo> removeCardInfo(int id)
+        {
+            CardInfo ciToRemove = dbContext.CardInfo.FirstOrDefault(ci => ci.Id == id);
+
+            if(ciToRemove == null)
+            {
+                return NotFound(); 
+            }
+            dbContext.CardInfo.Remove(ciToRemove);
+            dbContext.SaveChanges();
+            return ciToRemove;
+        }
     }
 }
