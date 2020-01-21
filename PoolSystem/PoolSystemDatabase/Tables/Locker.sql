@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[Locker]
 (
-	[Id] INT NOT NULL PRIMARY KEY,
+	[Id] INT NOT NULL IDENTITY PRIMARY KEY,
 	[Number] INT NOT NULL,
 	[ChangingRoom] INT NOT NULL
 )
