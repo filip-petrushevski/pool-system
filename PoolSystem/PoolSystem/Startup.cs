@@ -54,7 +54,9 @@ namespace PoolSystem
                 .AllowAnyMethod()
                 .AllowAnyHeader()
                 .AllowCredentials());
+
             app.UseAuthentication();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

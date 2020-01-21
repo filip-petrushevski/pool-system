@@ -25,7 +25,7 @@ namespace PoolSystem.Services
 
         public async Task<Employee> Authenticate(string username, string password)
         {
-            _users = context.Employee.ToList();
+            _users = context.Employee.Where(x => x.Username != null).ToList();
             var user = await Task.Run(() => _users.SingleOrDefault(x => x.Username == username && x.Password == password));
 
             // return null if user not found
@@ -39,6 +39,7 @@ namespace PoolSystem.Services
 
         public async Task<IEnumerable<Employee>> GetAll()
         {
+            _users = context.Employee.Where(x => x.Username != null).ToList();
             // return users without passwords
             return await Task.Run(() => _users.Select(x => {
                 x.Password = null;
