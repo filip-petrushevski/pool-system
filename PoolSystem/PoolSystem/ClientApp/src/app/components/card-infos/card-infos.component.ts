@@ -19,7 +19,6 @@ export class CardInfosComponent implements OnInit {
     this.apiService.getCardInfos().subscribe(resp => {
       this.cardInfos = resp;
       console.log(resp);
-
     });
   }
 
