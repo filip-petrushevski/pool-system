@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   loading = false;
   submitted = false;
+  invalidInfo = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -55,6 +56,9 @@ export class LoginComponent implements OnInit {
         },
         error => {
             this.loading = false;
+            if (error.status === 400) {
+              this.invalidInfo = true;
+            }
             console.log(error);
         });
 
