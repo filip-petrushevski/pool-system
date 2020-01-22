@@ -9,7 +9,7 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class CardInfosComponent implements OnInit {
 
-  cardInfos: Array<CardInfo>;
+  cardInfos: CardInfo[];
 
   constructor(
     private apiService: ApiService
@@ -18,7 +18,8 @@ export class CardInfosComponent implements OnInit {
   ngOnInit() {
     this.apiService.getCardInfos().subscribe(resp => {
       this.cardInfos = resp;
-      console.log(resp);
+    }, err => {
+      console.log(err);
     });
   }
 

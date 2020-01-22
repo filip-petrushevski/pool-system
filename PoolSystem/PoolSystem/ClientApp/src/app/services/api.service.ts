@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { CardInfo } from 'src/app/models/card-info';
 import { User } from '../models/user';
 
-const apiUrl = 'http://localhost:44300/api/';
+const apiUrl = 'https://localhost:44300/api/';
 const httpOptions = {
   headers: new HttpHeaders({'Access-Control-Allow-Origin': '*'})
 };
@@ -15,7 +15,7 @@ export class ApiService {
   constructor(private httpClient: HttpClient) { }
 
   getCardInfos(): Observable<CardInfo[]> {
-    return this.httpClient.get<CardInfo[]>(`${apiUrl}CardInfo`, httpOptions);
+    return this.httpClient.get<CardInfo[]>(`${apiUrl}cardinfo`, httpOptions);
   }
 
   login(user: User): Observable<User> {

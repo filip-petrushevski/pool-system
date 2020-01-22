@@ -4,4 +4,5 @@ export interface CardInfo {
   durationInDays: number;
   visitsInWeek: number;
   price: number;
+  imageUrl: string;
 }
