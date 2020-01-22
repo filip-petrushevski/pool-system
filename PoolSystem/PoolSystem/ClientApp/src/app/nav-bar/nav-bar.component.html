@@ -9,19 +9,25 @@
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/home']" routerLinkActive="active">Home</a>
         </li>
-        <li class="nav-item">
+        <li *ngIf="!loggedIn" class="nav-item">
           <a class="nav-link" [routerLink]="['/home']" fragment="about">About Us</a>
         </li>
-        <li class="nav-item">
+        <li *ngIf="!loggedIn" class="nav-item">
           <a class="nav-link"  [routerLink]="['/home']" fragment="services">Services</a>
         </li>
-        <li class="nav-item">
+        <li *ngIf="!loggedIn" class="nav-item">
           <a class="nav-link" [routerLink]="['/home']" fragment="contact" routerLinkActive="active">Contact</a>
+        </li>
+        <li *ngIf="loggedIn" class="nav-item">
+          <a class="nav-link" [routerLink]="['/cardsinfo']" routerLinkActive="active">Cards Info</a>
         </li>
       </ul>
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
+        <li *ngIf="!loggedIn" class="nav-item">
           <a class="nav-link" [routerLink]="['/login']" routerLinkActive="active">Log in</a>
+        </li>
+        <li *ngIf="loggedIn" class="nav-item">
+          <a class="nav-link" [routerLink]="['/home']" routerLinkActive="active" (click)="logout()">Log out</a>
         </li>
       </ul>
     </div>

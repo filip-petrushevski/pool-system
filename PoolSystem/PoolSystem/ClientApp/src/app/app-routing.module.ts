@@ -18,7 +18,7 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
-    path: 'cardinfo',
+    path: 'cardsinfo',
     component: CardInfosComponent
   },
   {
