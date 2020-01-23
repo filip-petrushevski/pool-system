@@ -5,6 +5,7 @@ import { LoginComponent } from './components/login/login.component';
 import { CardInfosComponent } from './components/card-infos/card-infos.component';
 import { MembersComponent } from './components/members/members.component';
 import { MemberComponent } from './components/member/member.component';
+import { AddmemberComponent } from './components/addmember/addmember.component';
 
 
 const routes: Routes = [
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: 'members/:id',
     component: MemberComponent
+  },
+  {
+    path: 'addmember',
+    component: AddmemberComponent
   },
   {
     path: '',

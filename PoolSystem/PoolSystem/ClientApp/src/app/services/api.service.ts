@@ -26,4 +26,20 @@ export class ApiService {
   getMembers(): Observable<Member[]> {
     return this.httpClient.get<Member[]>(`${apiUrl}members`, httpOptions);
   }
+
+  addMember(member: Member): Observable<Member> {
+    return this.httpClient.post<Member>(`${apiUrl}members`, member, httpOptions);
+  }
+
+  removeMember(id: number): Observable<Member> {
+    return this.httpClient.delete<Member>(`${apiUrl}members/${id}`, httpOptions);
+  }
+
+  getMember(id: number): Observable<Member> {
+    return this.httpClient.get<Member>(`${apiUrl}members/${id}`, httpOptions);
+  }
+
+  patchMember(id: number, member: any): Observable<Member> {
+    return this.httpClient.patch<Member>(`${apiUrl}members/${id}`, member, httpOptions);
+  }
 }

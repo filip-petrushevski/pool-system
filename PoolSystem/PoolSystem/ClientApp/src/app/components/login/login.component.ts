@@ -5,6 +5,7 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 import { first } from 'rxjs/operators';
 import { ApiService } from 'src/app/services/api.service';
 import { User } from 'src/app/models/user';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-login',
@@ -20,8 +21,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private authenticationService: AuthenticationService,
-    private apiService: ApiService,
-    private router: Router
+    private router: Router,
+    private matSnackBar: MatSnackBar
     ) { }
 
   ngOnInit() {
@@ -53,6 +54,9 @@ export class LoginComponent implements OnInit {
         data => {
           this.loading = false;
           this.router.navigate(['/home']);
+          this.matSnackBar.open('You have succesfully logged in', '', {
+            duration: 2000
+          });
         },
         error => {
             this.loading = false;

@@ -1,6 +1,6 @@
 <div class="jumbotron">
   <div class="container">
-    <form [formGroup]="updateMemberForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="addMemberForm" (ngSubmit)="onSubmit()">
       <div><label>First Name:</label></div>
       <input type="text" formControlName="firstName">
       <div><label>Last Name:</label></div>
@@ -9,7 +9,7 @@
       <input type="text" formControlName="address">
       <div><label>Phone:</label></div>
       <input type="text" formControlName="phone">
-      <div><button type="submit" mat-raised-button color="primary" [disabled]="!updateMemberForm.valid">Save Changes</button></div>
+      <div><button type="submit" mat-raised-button color="primary" [disabled]="!addMemberForm.valid">Submit</button></div>
     </form>
   </div>
 </div>

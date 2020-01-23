@@ -18,8 +18,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { CardInfosComponent } from './components/card-infos/card-infos.component';
 import { MembersComponent } from './components/members/members.component';
 import { MatTableModule,
-         MatButtonModule } from '@angular/material';
+         MatButtonModule,
+         MatSnackBarModule } from '@angular/material';
 import { MemberComponent } from './components/member/member.component';
+import { AddmemberComponent } from './components/addmember/addmember.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,7 @@ import { MemberComponent } from './components/member/member.component';
     CardInfosComponent,
     MembersComponent,
     MemberComponent,
+    AddmemberComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,13 +48,17 @@ import { MemberComponent } from './components/member/member.component';
     ReactiveFormsModule,
     HttpClientModule,
     MatTableModule,
-    MatButtonModule
+    MatButtonModule,
+    ReactiveFormsModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent],
   exports: [
     MatTableModule,
-    MatButtonModule
+    MatButtonModule,
+    ReactiveFormsModule,
+    MatSnackBarModule
   ]
 })
 export class AppModule { }
