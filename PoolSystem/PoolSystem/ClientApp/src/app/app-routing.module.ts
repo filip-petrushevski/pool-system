@@ -6,6 +6,7 @@ import { CardInfosComponent } from './components/card-infos/card-infos.component
 import { MembersComponent } from './components/members/members.component';
 import { MemberComponent } from './components/member/member.component';
 import { AddmemberComponent } from './components/addmember/addmember.component';
+import { VisitsComponent } from './components/visits/visits.component';
 
 
 const routes: Routes = [
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: 'addmember',
     component: AddmemberComponent
+  },
+  {
+    path: 'visits',
+    component: VisitsComponent
   },
   {
     path: '',

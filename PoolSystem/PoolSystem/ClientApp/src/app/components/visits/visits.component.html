@@ -1,0 +1,55 @@
+<button *ngIf="!addingVisit" class="new-button" mat-raised-button (click)="newVisit()">New Visit</button>
+<button *ngIf="addingVisit" class="cancel-button" color="warn" mat-raised-button (click)="onCancel()">Cancel</button>
+
+<form *ngIf="addingVisit" [formGroup]="addForm" (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <input matInput placeholder="Visit ID" formControlName="id">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Card ID" formControlName="cardId">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Locker ID" formControlName="lockerId">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [matDatepicker]="arrivalPicker" placeholder="Arrival Date" formControlName="arrivalDateTime">
+    <mat-datepicker-toggle matSuffix [for]="arrivalPicker"></mat-datepicker-toggle>
+    <mat-datepicker #arrivalPicker></mat-datepicker>
+  </mat-form-field>
+  <div class="timepicker">
+    <input placeholder="Arrival Time" aria-label="24hr format" [ngxTimepicker]="arrivalTime" [format]="24" readonly>
+    <ngx-material-timepicker #arrivalTime></ngx-material-timepicker>
+  </div>
+  <button type="submit" mat-raised-button color="primary">Submit</button>
+</form>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <ng-container matColumnDef="ID">
+    <th mat-header-cell *matHeaderCellDef> Visit ID </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+  <ng-container matColumnDef="CardID">
+    <th mat-header-cell *matHeaderCellDef> Card ID </th>
+    <td mat-cell *matCellDef="let element"> {{element.cardId}} </td>
+  </ng-container>
+  <ng-container matColumnDef="LockerID">
+    <th mat-header-cell *matHeaderCellDef> Locker ID </th>
+    <td mat-cell *matCellDef="let element"> {{element.lockerId}} </td>
+  </ng-container>
+  <ng-container matColumnDef="ArrivalDateTime">
+    <th mat-header-cell *matHeaderCellDef> Arrival </th>
+    <td mat-cell *matCellDef="let element"> {{element.arrivalDateTime}} </td>
+  </ng-container>
+  <ng-container matColumnDef="LeaveDateTime">
+    <th mat-header-cell *matHeaderCellDef> Leave </th>
+    <td mat-cell *matCellDef="let element"> {{element.leaveDateTime}} </td>
+  </ng-container>
+  <ng-container matColumnDef="actions">
+    <mat-header-cell class="actions-header" *matHeaderCellDef > Actions </mat-header-cell>
+    <mat-cell *matCellDef="let element">
+         <button mat-raised-button color="warn" (click)="removeVisit(element.id)">Remove Visit</button>
+    </mat-cell>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

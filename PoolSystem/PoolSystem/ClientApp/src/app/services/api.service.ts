@@ -42,4 +42,8 @@ export class ApiService {
   patchMember(id: number, member: any): Observable<Member> {
     return this.httpClient.patch<Member>(`${apiUrl}members/${id}`, member, httpOptions);
   }
+
+  postVisit(visit: Visit): Observable<Visit> {
+    return this.httpClient.post<Visit>(`${apiUrl}visits`, visit, httpOptions);
+  }
 }
