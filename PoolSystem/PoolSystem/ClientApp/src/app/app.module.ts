@@ -16,6 +16,10 @@ import { FooterComponent } from './components/footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CardInfosComponent } from './components/card-infos/card-infos.component';
+import { MembersComponent } from './components/members/members.component';
+import { MatTableModule,
+         MatButtonModule } from '@angular/material';
+import { MemberComponent } from './components/member/member.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +32,8 @@ import { CardInfosComponent } from './components/card-infos/card-infos.component
     ServicesComponent,
     FooterComponent,
     CardInfosComponent,
+    MembersComponent,
+    MemberComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,10 +43,15 @@ import { CardInfosComponent } from './components/card-infos/card-infos.component
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent],
-  exports: []
+  exports: [
+    MatTableModule,
+    MatButtonModule
+  ]
 })
 export class AppModule { }

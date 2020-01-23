@@ -21,5 +21,8 @@
             Login
         </button>
     </div>
+    <div *ngIf="invalidInfo" class="warning">
+      <p>Invalid username or password</p>
+    </div>
 </form>
 </div>

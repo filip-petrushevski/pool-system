@@ -15,7 +15,7 @@ namespace PoolSystem.Models
         public int DurationInDays { get; set; }
         public int VisitsInWeek { get; set; }
         public int Price { get; set; }
-
+        public string ImageUrl { get; set; }
         public virtual ICollection<Card> Card { get; set; }
     }
 }

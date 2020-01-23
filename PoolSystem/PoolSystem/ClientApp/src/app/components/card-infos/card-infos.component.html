@@ -1,1 +1,19 @@
-<p>card-infos works!</p>
+<div *ngFor="let card of cardInfos" class="wrapper">
+  <div class="container">
+    <div class="top" [style.background-image]="'url(' + card.imageUrl + ')' + ' no-repeat center center'"></div>
+    <div class="bottom">
+      <div class="left">
+        <div class="details">
+          <h1>{{ card.name.split(' ')[0] }}</h1>
+          <p>{{ card.price }} denari</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="inside">
+    <div class="icon"><i class="material-icons">info_outline</i></div>
+    <div class="contents">
+      <h6>Trenirajte eksklizivno vo najdobriot bazen vo gradot {{ card.visitsInWeek }} pati vo nedelata</h6>
+    </div>
+  </div>
+</div>
