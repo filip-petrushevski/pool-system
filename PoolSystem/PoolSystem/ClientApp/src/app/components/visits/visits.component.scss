@@ -1,6 +1,6 @@
 .new-button {
   color: white;
-  background-color: rgb(44, 192, 44);
+  background-color: #43af4c;
   margin-left: 7%;
   margin-top: 30px;
 }
@@ -27,4 +27,12 @@ form {
 .timepicker {
   margin-bottom: 15px;
   border-color: lightgrey;
+}
+
+.actions-header {
+  margin-top: 19px;
+}
+
+.remove-button {
+  margin-right: 7px;
 }

@@ -96,6 +96,16 @@ namespace PoolSystem.Controllers
             return CreatedAtAction("GetVisit", new { id = visit.Id }, visit);
         }
 
+        [HttpPost("/confirm/{id}")]
+        public Visit ConfirmVisit([FromRoute]int id)
+        {
+            var visit = _context.Visit.Find(id);
+
+            visit.Confirmed = true;
+
+            return visit;
+        }
+
         // DELETE: api/Visits/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<Visit>> DeleteVisit(int id)

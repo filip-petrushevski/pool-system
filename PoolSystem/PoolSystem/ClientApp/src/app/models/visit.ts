@@ -2,7 +2,8 @@ class Visit {
   id: number;
   cardId: number;
   lockerId: number;
-  arrivalDateTime: Date;
-  leaveDateTime: Date;
+  arrivalDateTime: string;
+  leaveDateTime: string;
+  confirmed: boolean;
   constructor() {}
 }

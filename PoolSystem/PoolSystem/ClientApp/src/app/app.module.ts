@@ -26,6 +26,8 @@ import { MemberComponent } from './components/member/member.component';
 import { AddmemberComponent } from './components/addmember/addmember.component';
 import { VisitsComponent } from './components/visits/visits.component';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
+import { PaymentsComponent } from './components/payments/payments.component';
+import { NewPaymentComponent } from './components/new-payment/new-payment.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,8 @@ import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
     MemberComponent,
     AddmemberComponent,
     VisitsComponent,
+    PaymentsComponent,
+    NewPaymentComponent,
   ],
   imports: [
     BrowserModule,
