@@ -41,6 +41,7 @@ export class VisitsComponent implements OnInit {
   removeVisit(id: number): void {
     this.apiService.deleteVisit(id).subscribe(res => {
       this.matSnackBar.open('Visit removed', '', {duration: 2000});
+      this.dataSource = this.dataSource.filter(el => el.id !== id);
     }, err => {
       console.log(err);
     });
@@ -61,6 +62,7 @@ export class VisitsComponent implements OnInit {
       this.dataSource.forEach(e => {
         if (e.id === id) {
           e.confirmed = true;
+          e.leaveDateTime = res.leaveDateTime.split('T')[1].split('\.')[0];
         }
       });
     }, err => {
@@ -118,12 +120,13 @@ export class VisitsComponent implements OnInit {
       confirmed: false
     };
 
+    this.dataSource = [...this.dataSource, visit];
+
     this.apiService.postVisit(visit).subscribe(res => {
       console.log(res);
       this.matSnackBar.open('Visit added', '', {
         duration: 2000
       });
-      this.dataSource.push(visit);
       this.onCancel();
     }, err => {
       console.log(err);

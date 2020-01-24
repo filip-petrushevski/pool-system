@@ -96,12 +96,15 @@ namespace PoolSystem.Controllers
             return CreatedAtAction("GetVisit", new { id = visit.Id }, visit);
         }
 
-        [HttpPost("/confirm/{id}")]
+        [HttpPost("confirm/{id}")]
         public Visit ConfirmVisit([FromRoute]int id)
         {
             var visit = _context.Visit.Find(id);
 
             visit.Confirmed = true;
+            visit.LeaveDateTime = DateTime.Now;
+
+            _context.SaveChanges();
 
             return visit;
         }

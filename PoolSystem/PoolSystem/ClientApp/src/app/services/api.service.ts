@@ -51,8 +51,8 @@ export class ApiService {
     return this.httpClient.get<Visit[]>(`${apiUrl}visits`, httpOptions);
   }
 
-  confirmVisit(id: number): Observable<boolean> {
-    return this.httpClient.post<boolean>(`${apiUrl}visits/confirm/${id}`, httpOptions);
+  confirmVisit(id: number): Observable<Visit> {
+    return this.httpClient.post<Visit>(`${apiUrl}visits/confirm/${id}`, httpOptions);
   }
 
   deleteVisit(id: number): Observable<Visit> {
