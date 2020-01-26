@@ -1,0 +1,45 @@
+<button class="back-button" mat-raised-button color="accent" (click)="onBack()">Back</button>
+<h3 *ngIf="creatingCard">Create a card</h3>
+<form *ngIf="creatingCard" class="card-form" [formGroup]="cardForm" (ngSubmit)="submitCardForm()">
+  <mat-form-field>
+    <input matInput placeholder="Card ID" formControlName="id">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Card Type</mat-label>
+    <mat-select formControlName="cardInfoId">
+      <mat-option *ngFor="let cardInfo of cardInfos" [value]="cardInfo.id">
+        {{cardInfo.name.split(' ')[0]}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [matDatepicker]="startDatePicker" placeholder="Start Date" formControlName="startDate">
+    <mat-datepicker-toggle matSuffix [for]="startDatePicker"></mat-datepicker-toggle>
+    <mat-datepicker #startDatePicker></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [matDatepicker]="endDatePicker" placeholder="End Date" formControlName="endDate">
+    <mat-datepicker-toggle matSuffix [for]="endDatePicker"></mat-datepicker-toggle>
+    <mat-datepicker #endDatePicker></mat-datepicker>
+  </mat-form-field>
+  <button type="submit" mat-raised-button color="primary">Next</button>
+</form>
+
+<h3 *ngIf="!creatingCard">Create a payment</h3>
+<form *ngIf="!creatingCard" class="card-form" [formGroup]="paymentForm" (ngSubmit)="submitPaymentForm()">
+  <mat-form-field>
+    <input matInput placeholder="Payment ID" formControlName="paymentId">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Payment Type</mat-label>
+    <mat-select formControlName="paymentType">
+      <mat-option *ngFor="let paymentType of paymentTypes" [value]="paymentType.value">
+        {{paymentType.text}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Member ID" formControlName="memberId">
+  </mat-form-field>
+  <button type="submit" mat-raised-button color="primary">Finish</button>
+</form>

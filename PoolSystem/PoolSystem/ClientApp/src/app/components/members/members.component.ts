@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Member } from 'src/app/models/member';
 import { ApiService } from 'src/app/services/api.service';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-members',
@@ -10,11 +11,12 @@ import { Router } from '@angular/router';
 })
 export class MembersComponent implements OnInit {
   members: Member[];
-  displayedColumns: string[] = ['firstName', 'lastName', 'address', 'phone', 'actions'];
+  displayedColumns: string[] = ['id', 'firstName', 'lastName', 'address', 'phone', 'actions'];
   dataSource;
   constructor(
     private apiService: ApiService,
-    private router: Router
+    private router: Router,
+    private matSnackBar: MatSnackBar
   ) { }
 
   ngOnInit() {
@@ -27,8 +29,23 @@ export class MembersComponent implements OnInit {
     });
   }
 
-  goToProfile(id: number) {
+  goToProfile(id: number): void {
     this.router.navigate(['members', id]);
   }
 
+  addMember(): void {
+    this.router.navigate(['addmember']);
+  }
+
+  removeMember(id: number): void {
+    this.apiService.removeMember(id).subscribe(res => {
+      console.log(res);
+      this.dataSource = this.dataSource.filter(el => el.id !== id);
+      this.matSnackBar.open('Member Removed', '', {
+        duration: 2000
+      });
+    }, err => {
+      console.log(err);
+    });
+  }
 }

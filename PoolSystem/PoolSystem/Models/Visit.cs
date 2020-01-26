@@ -7,9 +7,10 @@ namespace PoolSystem.Models
     {
         public int Id { get; set; }
         public DateTime ArrivalDateTime { get; set; }
-        public DateTime LeaveDateTime { get; set; }
+        public DateTime? LeaveDateTime { get; set; }
         public int CardId { get; set; }
         public int LockerId { get; set; }
+        public bool Confirmed { get; set; }
 
         public virtual Card Card { get; set; }
         public virtual Locker Locker { get; set; }

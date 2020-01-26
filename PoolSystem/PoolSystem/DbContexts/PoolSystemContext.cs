@@ -50,7 +50,6 @@ namespace PoolSystem.DbContexts
 
                 entity.HasOne(d => d.Payment)
                     .WithMany(p => p.Card)
-                    .HasForeignKey(d => d.PaymentId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Card_Payment");
             });

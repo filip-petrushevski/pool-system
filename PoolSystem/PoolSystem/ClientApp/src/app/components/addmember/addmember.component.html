@@ -1,6 +1,9 @@
 <div class="jumbotron">
   <div class="container">
-    <form [formGroup]="updateMemberForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="addMemberForm" (ngSubmit)="onSubmit()">
+      <mat-form-field>
+        <input matInput placeholder="Member ID" formControlName="id">
+      </mat-form-field>
       <mat-form-field>
         <input matInput placeholder="First Name" formControlName="firstName">
       </mat-form-field>
@@ -13,7 +16,7 @@
       <mat-form-field>
         <input matInput placeholder="Phone" formControlName="phone">
       </mat-form-field>
-      <button type="submit" mat-raised-button color="primary" [disabled]="!updateMemberForm.valid">Save Changes</button>
+      <button type="submit" mat-raised-button color="primary" [disabled]="!addMemberForm.valid">Submit</button>
     </form>
   </div>
 </div>

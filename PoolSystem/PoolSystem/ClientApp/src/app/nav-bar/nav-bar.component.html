@@ -21,6 +21,12 @@
         <li *ngIf="loggedIn" class="nav-item">
           <a class="nav-link" [routerLink]="['/members']" routerLinkActive="active">Members</a>
         </li>
+        <li *ngIf="loggedIn" class="nav-item">
+          <a class="nav-link" [routerLink]="['/visits']" routerLinkActive="active">Visits</a>
+        </li>
+        <li *ngIf="loggedIn" class="nav-item">
+          <a class="nav-link" [routerLink]="['/payments']" routerLinkActive="active">Payments</a>
+        </li>
       </ul>
       <ul class="navbar-nav ml-auto">
         <li *ngIf="!loggedIn" class="nav-item">

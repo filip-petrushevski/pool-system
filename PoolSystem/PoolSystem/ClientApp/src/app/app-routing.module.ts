@@ -5,6 +5,10 @@ import { LoginComponent } from './components/login/login.component';
 import { CardInfosComponent } from './components/card-infos/card-infos.component';
 import { MembersComponent } from './components/members/members.component';
 import { MemberComponent } from './components/member/member.component';
+import { AddmemberComponent } from './components/addmember/addmember.component';
+import { VisitsComponent } from './components/visits/visits.component';
+import { PaymentsComponent } from './components/payments/payments.component';
+import { NewPaymentComponent } from './components/new-payment/new-payment.component';
 
 
 const routes: Routes = [
@@ -27,6 +31,22 @@ const routes: Routes = [
   {
     path: 'members/:id',
     component: MemberComponent
+  },
+  {
+    path: 'addmember',
+    component: AddmemberComponent
+  },
+  {
+    path: 'visits',
+    component: VisitsComponent
+  },
+  {
+    path: 'payments',
+    component: PaymentsComponent
+  },
+  {
+    path: 'newpayment',
+    component: NewPaymentComponent
   },
   {
     path: '',

@@ -1,3 +1,5 @@
+import { SafeStyle } from '@angular/platform-browser';
+
 export interface CardInfo {
   id: number;
   name: string;
@@ -5,4 +7,5 @@ export interface CardInfo {
   visitsInWeek: number;
   price: number;
   imageUrl: string;
+  imageStyle: SafeStyle;
 }

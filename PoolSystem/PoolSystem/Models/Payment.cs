@@ -1,6 +1,7 @@
 ﻿using PoolSystem.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace PoolSystem.Models
 {
@@ -12,9 +13,10 @@ namespace PoolSystem.Models
             Member = new HashSet<Member>();
         }
 
+        [Key]
         public int Id { get; set; }
         public PaymentType PaymentType { get; set; }
-        public DateTime CreatedOn { get; set; }
+        public DateTime? CreatedOn { get; set; }
         public int EmployeeId { get; set; }
         public int MemberId { get; set; }
         public int CardId { get; set; }

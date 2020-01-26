@@ -76,6 +76,7 @@ namespace PoolSystem.Controllers
         [HttpPost]
         public async Task<ActionResult<Payment>> PostPayment(Payment payment)
         {
+            payment.CreatedOn = DateTime.Now;
             _context.Payment.Add(payment);
             try
             {

@@ -18,8 +18,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { CardInfosComponent } from './components/card-infos/card-infos.component';
 import { MembersComponent } from './components/members/members.component';
 import { MatTableModule,
-         MatButtonModule } from '@angular/material';
+         MatButtonModule,
+         MatSnackBarModule,
+         MatDatepickerModule,
+         MatNativeDateModule,
+         MatSelectModule} from '@angular/material';
 import { MemberComponent } from './components/member/member.component';
+import { AddmemberComponent } from './components/addmember/addmember.component';
+import { VisitsComponent } from './components/visits/visits.component';
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
+import { PaymentsComponent } from './components/payments/payments.component';
+import { NewPaymentComponent } from './components/new-payment/new-payment.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +43,10 @@ import { MemberComponent } from './components/member/member.component';
     CardInfosComponent,
     MembersComponent,
     MemberComponent,
+    AddmemberComponent,
+    VisitsComponent,
+    PaymentsComponent,
+    NewPaymentComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,13 +58,27 @@ import { MemberComponent } from './components/member/member.component';
     ReactiveFormsModule,
     HttpClientModule,
     MatTableModule,
-    MatButtonModule
+    MatButtonModule,
+    ReactiveFormsModule,
+    MatSnackBarModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    NgxMaterialTimepickerModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent],
   exports: [
     MatTableModule,
-    MatButtonModule
+    MatButtonModule,
+    ReactiveFormsModule,
+    MatSnackBarModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    NgxMaterialTimepickerModule,
+    MatSelectModule
   ]
 })
 export class AppModule { }
