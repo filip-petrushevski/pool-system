@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { CardInfo } from 'src/app/models/card-info';
 import { User } from '../models/user';
 import { Member } from '../models/member';
+import { Payment } from '../models/payment';
 
 const apiUrl = 'https://localhost:44300/api/';
 const httpOptions = {
@@ -57,5 +58,17 @@ export class ApiService {
 
   deleteVisit(id: number): Observable<Visit> {
     return this.httpClient.delete<Visit>(`${apiUrl}visits/${id}`, httpOptions);
+  }
+
+  postCard(card: Card): Observable<Card> {
+    return this.httpClient.post<Card>(`${apiUrl}cards`, card, httpOptions);
+  }
+
+  postPayment(payment: Payment): Observable<Payment> {
+    return this.httpClient.post<Payment>(`${apiUrl}payments`, payment, httpOptions);
+  }
+
+  getPayments(): Observable<Payment[]> {
+    return this.httpClient.get<Payment[]>(`${apiUrl}payments`, httpOptions);
   }
 }

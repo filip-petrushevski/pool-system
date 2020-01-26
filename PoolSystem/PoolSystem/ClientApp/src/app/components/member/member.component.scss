@@ -5,5 +5,11 @@
 
 button {
   margin-top: 30px;
-  width: 185px;
+  width: 300px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
 }

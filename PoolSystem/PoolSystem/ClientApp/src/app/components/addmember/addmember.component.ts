@@ -12,6 +12,7 @@ import { MatSnackBar } from '@angular/material';
 })
 export class AddmemberComponent implements OnInit {
   addMemberForm = new FormGroup({
+    id: new FormControl('', Validators.required),
     firstName: new FormControl('', Validators.required),
     lastName: new FormControl('', Validators.required),
     address: new FormControl('', Validators.required),
@@ -32,11 +33,13 @@ export class AddmemberComponent implements OnInit {
       return;
     }
 
-    const member: any = {
+    const member: Member = {
+      id: +this.addMemberForm.get('id').value,
       firstName: this.addMemberForm.get('firstName').value,
       lastName: this.addMemberForm.get('lastName').value,
       address: this.addMemberForm.get('address').value,
-      phone: this.addMemberForm.get('phone').value
+      phone: this.addMemberForm.get('phone').value,
+      lastPaymentId: null
     };
 
     this.apiService.addMember(member).subscribe(res => {

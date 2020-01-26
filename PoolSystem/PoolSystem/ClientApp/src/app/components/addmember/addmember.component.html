@@ -1,15 +1,22 @@
 <div class="jumbotron">
   <div class="container">
     <form [formGroup]="addMemberForm" (ngSubmit)="onSubmit()">
-      <div><label>First Name:</label></div>
-      <input type="text" formControlName="firstName">
-      <div><label>Last Name:</label></div>
-      <input type="text" formControlName="lastName">
-      <div><label>Address:</label></div>
-      <input type="text" formControlName="address">
-      <div><label>Phone:</label></div>
-      <input type="text" formControlName="phone">
-      <div><button type="submit" mat-raised-button color="primary" [disabled]="!addMemberForm.valid">Submit</button></div>
+      <mat-form-field>
+        <input matInput placeholder="Member ID" formControlName="id">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="First Name" formControlName="firstName">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Last Name" formControlName="lastName">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Address" formControlName="address">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Phone" formControlName="phone">
+      </mat-form-field>
+      <button type="submit" mat-raised-button color="primary" [disabled]="!addMemberForm.valid">Submit</button>
     </form>
   </div>
 </div>

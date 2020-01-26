@@ -11,7 +11,7 @@ import { MatSnackBar } from '@angular/material';
 })
 export class MembersComponent implements OnInit {
   members: Member[];
-  displayedColumns: string[] = ['firstName', 'lastName', 'address', 'phone', 'actions'];
+  displayedColumns: string[] = ['id', 'firstName', 'lastName', 'address', 'phone', 'actions'];
   dataSource;
   constructor(
     private apiService: ApiService,

@@ -15,7 +15,6 @@ namespace PoolSystem.Models
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public int CardInfoId { get; set; }
-        public int PaymentId { get; set; }
 
         public virtual CardInfo CardInfo { get; set; }
         public virtual Payment Payment { get; set; }

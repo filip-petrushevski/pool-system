@@ -21,7 +21,8 @@ import { MatTableModule,
          MatButtonModule,
          MatSnackBarModule,
          MatDatepickerModule,
-         MatNativeDateModule} from '@angular/material';
+         MatNativeDateModule,
+         MatSelectModule} from '@angular/material';
 import { MemberComponent } from './components/member/member.component';
 import { AddmemberComponent } from './components/addmember/addmember.component';
 import { VisitsComponent } from './components/visits/visits.component';
@@ -63,7 +64,8 @@ import { NewPaymentComponent } from './components/new-payment/new-payment.compon
     MatFormFieldModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    NgxMaterialTimepickerModule
+    NgxMaterialTimepickerModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent],
@@ -75,7 +77,8 @@ import { NewPaymentComponent } from './components/new-payment/new-payment.compon
     MatFormFieldModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    NgxMaterialTimepickerModule
+    NgxMaterialTimepickerModule,
+    MatSelectModule
   ]
 })
 export class AppModule { }

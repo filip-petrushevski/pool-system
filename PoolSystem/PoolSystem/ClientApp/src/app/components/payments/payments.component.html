@@ -1,1 +1,32 @@
 <button mat-raised-button class="new-button" (click)="newPayment()">+ New Payment</button>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <ng-container matColumnDef="ID">
+    <th mat-header-cell *matHeaderCellDef> Payment ID </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+  <ng-container matColumnDef="Payment Type">
+    <th mat-header-cell *matHeaderCellDef> Payment Type </th>
+    <td mat-cell *matCellDef="let element">
+      <span *ngIf="element.paymentType === 0">Cash</span>
+      <span *ngIf="element.paymentType === 1">Credit Card</span>
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="Created On">
+    <th mat-header-cell *matHeaderCellDef> Created On </th>
+    <td mat-cell *matCellDef="let element"> {{element.createdOn}} </td>
+  </ng-container>
+  <ng-container matColumnDef="Employee ID">
+    <th mat-header-cell *matHeaderCellDef> Employee ID </th>
+    <td mat-cell *matCellDef="let element"> {{element.employeeId}} </td>
+  </ng-container>
+  <ng-container matColumnDef="Member ID">
+    <th mat-header-cell *matHeaderCellDef> Member ID </th>
+    <td mat-cell *matCellDef="let element"> {{element.memberId}} </td>
+  </ng-container>
+  <ng-container matColumnDef="Card ID">
+    <th mat-header-cell *matHeaderCellDef> Card ID </th>
+    <td mat-cell *matCellDef="let element"> {{element.cardId}} </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

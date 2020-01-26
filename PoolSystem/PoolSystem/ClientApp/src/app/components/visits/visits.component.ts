@@ -32,6 +32,9 @@ export class VisitsComponent implements OnInit {
       this.dataSource = res;
       this.dataSource.forEach(element => {
         element.arrivalDateTime = element.arrivalDateTime.replace('T', ' ');
+        if (element.leaveDateTime) {
+          element.leaveDateTime = element.leaveDateTime.split('T')[1].split('\.')[0];
+        }
       });
     }, err => {
       console.log(err);
